@@ -14,5 +14,6 @@ files=(
 
 for file in ${files[@]}; do
 	cp -r $HOME/$file $dotfiles_dir/$file 2>/dev/null
-	notify-send "$?: $dotfiles_dir/$file"
+	notify-send "$?: $dotfiles_dir/$file" \
+		|| printf "$?: $dotfiles_dir/$file\n"
 done
